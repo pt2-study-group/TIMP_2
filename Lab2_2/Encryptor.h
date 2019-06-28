@@ -1,10 +1,3 @@
-	/** @file
-	 *  @author Шеманаев К.А.
-	 *  @version 1.0
-	 *  @date 14.06.2019
-	 *  @brief файл заголовком класса Encryptor
-	 */
-	 
 #pragma once
 
 #include <string>

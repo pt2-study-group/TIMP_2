@@ -1,23 +1,9 @@
-	/** @file
-	 *  @author Шеманаев К.А.
-	 *  @version 1.0
-	 *  @date 14.06.2019
-	 *  @brief файл с реализацией класса Encryptor
-	 */
-	 
 #include "Encryptor.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
-	/**
-     * @brief Зашифровывание
-     * @param [in] in Открытый текст. Не должен быть пустой строкой.
-     *                       Строчные символы автоматически преобразуются к прописным.
-     *                       Все не-буквы удаляются
-     * @return Зашифрованная строка
-     * @throw encryptException, если текст пустой
-     */
+
 string Encryptor::encrypt(string in, const int key) {
 	isInvalidMsg(in, key);
 	isInvalidKey(in, key);
@@ -57,14 +43,7 @@ string Encryptor::encrypt(string in, const int key) {
 	delete[] matrix;
 	return output;
 }
-	/**
-     * @brief Расшифрование
-     * @param [in] in Закрытый текст. Не должен быть пустой строкой.
-     *                       Строчные символы автоматически преобразуются к прописным.
-     *                       Все не-буквы удаляются
-     * @return Расшифрованная строка строка
-     * @throw encryptException, если текст пустой
-     */
+
 string Encryptor::decrypt(string in, const int key) {
 	isInvalidMsg(in, key);	
 	isInvalidKey(in, key);
@@ -112,12 +91,7 @@ string Encryptor::decrypt(string in, const int key) {
 	delete[] matrix;
 	return output;
 }
-	/**
-     * @brief Проверка ключа текста
-     * @param [in] in Ключ шифрования текста. key - ключ шифрования
-     * @return Строка с ключем
-     * @throw encryptException, если ключ слишком маленький, пустой или имеет некоректные символы. 
-     */
+
 void Encryptor::isInvalidKey(std::string in, const int key){
 	if (key == 0) throw encryptException("Empty key");
 
@@ -125,12 +99,7 @@ void Encryptor::isInvalidKey(std::string in, const int key){
 		throw encryptException("Invalid key value");
 	}
 }
-	/**
-     * @brief Проверка текста
-     * @param [in] in Ключ шифрования текста. key - ключ шифрования
-     * @return Строка с ключем
-     * @throw encryptException, если ключ слишком маленький, пустой или имеет некоректные символы. 
-     */
+
 void Encryptor::isInvalidMsg(std::string in, const int key){
 	if (in.empty()) throw encryptException("Empty message");
 	
