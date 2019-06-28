@@ -1,21 +1,9 @@
-/** @file
- *  @author Прохоров В.О.
- *  @version 1.0
- *  @date 14.06.2019
- *  @brief заголовочный файл класса modAlphaCipher
- */
- 
 #pragma once
 
 #include <vector>
 #include <string>
 #include <map>
 
-/** @brief Шифрование методом Гронсфельда
- *  @details Ключ устанавливается в конструкторе.
- *  Для зашифровывания и расшифровывания предназначены методы encrypt и decrypt.
- *  @warning Реализация только для английского языка
- */
 class modAlphaCipher {
 	
 private:
